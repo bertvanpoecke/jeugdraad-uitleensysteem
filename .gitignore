@@ -1,3 +1,6 @@
+#Exclude JSONs as they will contain private data.
+*.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

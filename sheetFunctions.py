@@ -116,15 +116,18 @@ def getRequests():
                 try:
                     fromDate = datetime.strptime( row[ ColumnTitles.kVan.value ], '%d/%m/%Y' )
                 except:
-                    fromDate = datetime.strptime( row[ ColumnTitles.kVan.value ], '%d-%m-%Y' )
+                    # fromDate = datetime.strptime( row[ ColumnTitles.kVan.value ], '%d-%m-%Y' )
+                    fromDate = datetime.strptime( row[ ColumnTitles.kVan.value ], '%Y-%m-%d' )
                 try:
                     toDate = datetime.strptime( row[ ColumnTitles.kTot.value ], '%d/%m/%Y' ) + timedelta( days=1 )
                 except:
-                    toDate = datetime.strptime( row[ ColumnTitles.kTot.value ], '%d-%m-%Y' ) + timedelta( days=1 )
+                    # toDate = datetime.strptime( row[ ColumnTitles.kTot.value ], '%d-%m-%Y' ) + timedelta( days=1 )
+                    toDate = datetime.strptime( row[ ColumnTitles.kTot.value ], '%Y-%m-%d' ) + timedelta( days=1 )
                 try:
                     eventDate = datetime.strptime( row[ ColumnTitles.kDatumEvenement.value ], '%d/%m/%Y' )
                 except:
-                    eventDate = datetime.strptime( row[ ColumnTitles.kDatumEvenement.value ], '%d-%m-%Y' )
+                    # eventDate = datetime.strptime( row[ ColumnTitles.kDatumEvenement.value ], '%d-%m-%Y' )
+                    eventDate = datetime.strptime( row[ ColumnTitles.kDatumEvenement.value ], '%Y-%m-%d' )
 
                 request = Request(
                     row[ ColumnTitles.kVoornaamAanvrager.value ],
